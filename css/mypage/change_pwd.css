@@ -53,8 +53,9 @@ span {
 }
 
 .description {
-  color: #777;
+  color: #FF7575;
   font-size: 14px;
+  font-weight: 300;
   position: absolute;
   bottom: -20px;
 }

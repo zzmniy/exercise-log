@@ -97,11 +97,16 @@ a {
 
 .input-group:first-child {
     margin-top: 10px;
+
+}
+
+.input-group input#height {
+    margin-left: 40px;
 }
 
 .input-group label {
     margin-right: 107px; /* 레이블과 입력 창 사이 간격 조절 */
-    font-size: 2rem;
+    font-size: 2.4rem;
 
 }
 
@@ -115,8 +120,9 @@ a {
 
 span {
     font-size: 2rem;
-
+    
 }
+
 
 .service {
     margin-top: 2rem;
@@ -139,6 +145,7 @@ span {
     padding: 0;
     width: calc(100% + 10rem);
     margin-left: -5rem;
+    
 }
 
 .privacy .logout {
