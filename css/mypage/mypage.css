@@ -1,0 +1,146 @@
+@charset "utf-8";
+
+/*리스트 스타일 제거*/
+ul {
+    list-style: none;
+}
+ 
+a {
+    color: inherit;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+
+/*페이지 타이틀 박스*/
+.page_title_box {
+    position: sticky; /* 영역 안 고정*/
+    top: 0;
+    left: 0;
+    width: calc(100% + 10rem);
+    padding: 1.5rem 0;
+    margin-left: -5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-bottom: 1px solid #eee;
+}
+
+/* 페이지 백 버튼*/
+.page_title_box .page_back {
+    position: absolute;
+    top: 50%;
+    left: 2rem;
+    transform: translateY(-50%);
+}
+
+/* 마이페이지 랩 */
+.mypage_wrap {
+    margin-top: 3rem;
+    padding: 0;
+    width: calc(100% + 10rem);
+    margin-left: -5rem;
+}
+
+/* 유저 프로필 */
+#profile {
+    padding-left: 2rem;
+    padding-bottom: 3.8rem;
+}
+
+#first_info {
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid #bbb;
+    padding-left: 0;
+    padding-right: 0;
+}
+
+/* 정보 */
+.info {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: left;
+    padding-left: 2.5rem;
+    padding-bottom: 3rem;
+    margin-bottom: 1rem;
+}
+
+.nickname {
+    font-size: 2.6rem;
+    font-weight: 500;
+    letter-spacing: -0.02em;
+    margin-bottom: 3rem;;
+}
+
+.details_info {
+    margin-top: 3rem;
+    padding: 0;
+    width: calc(100% + 10rem);
+    margin-left: -5rem;
+    border-bottom: 1px solid #bbb;
+}
+
+.cmkg {
+    display: flex;
+    flex-direction: column;
+    margin-left: 5rem;
+}
+
+.input-group {
+    display: flex;
+    align-items: center;
+    margin-right: 20px; /* 입력 그룹 간격 조절 */
+    margin-bottom: 40px;
+}
+
+.input-group:first-child {
+    margin-top: 10px;
+}
+
+.input-group label {
+    margin-right: 107px; /* 레이블과 입력 창 사이 간격 조절 */
+    font-size: 2rem;
+
+}
+
+.input-group input {
+    width: 9em;
+}
+
+.unit {
+    margin-left: 1rem;
+}
+
+span {
+    font-size: 2rem;
+
+}
+
+.service {
+    margin-top: 2rem;
+    margin-bottom: 3rem;
+    padding: 0;
+    width: calc(100% + 10rem);
+    margin-left: -5rem;
+    border-bottom: 1px solid #bbb;
+}
+
+.content  {
+    margin-left: 3rem;
+    margin-bottom: 18px;
+    line-height: 1.8;
+}
+
+.privacy {
+    margin-top: 2rem;
+    margin-bottom: 3rem;
+    padding: 0;
+    width: calc(100% + 10rem);
+    margin-left: -5rem;
+}
+
+.privacy .logout {
+    cursor: pointer;
+}

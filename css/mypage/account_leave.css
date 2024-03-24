@@ -1,0 +1,77 @@
+@charset "utf-8";
+
+/*페이지 타이틀 박스*/
+.page_title_box {
+  position: sticky; /* 영역 안 고정*/
+  top: 0;
+  left: 0;
+  width: calc(100% + 10rem);
+  padding: 1.5rem 0;
+  margin-left: -5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-bottom: 1px solid #eee;
+}
+
+/* 페이지 백 버튼*/
+.page_title_box .page_back {
+  position: absolute;
+  top: 50%;
+  left: 2rem;
+  transform: translateY(-50%);
+}
+
+.check {
+  font-size: 2.4rem;
+  color: #8f8f8f;
+  text-align: center;
+  margin-top: 87px;
+}
+
+#explain {
+  margin-top: 3.5rem;
+}
+
+.first_explain {
+  margin-bottom: 3rem;
+  border-radius: 1rem;
+  padding: 1.5rem;
+  background-color: #f6f7fa;
+}
+
+.first_explain p {
+  color: #acacae;
+}
+
+.head {
+  font-size: 2rem;
+  font-weight: 600;
+}
+
+.button_container {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+button {
+  border: none;
+  border-radius: 15px;
+  background: none;
+  width: 200px;
+  height: 56px;
+  font: inherit;
+  cursor: pointer;
+}
+
+.cancle {
+  color: #333;
+  background-color: #DEE0E4;
+  
+}
+
+.delete {
+  background-color: #25CB7B;
+  color: #fff;
+}

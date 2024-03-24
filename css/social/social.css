@@ -1,0 +1,59 @@
+@charset "utf-8";
+/*리스트 스타일 제거*/
+ul {
+  list-style: none;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+
+/*페이지 타이틀 박스*/
+.page_title_box {
+  position: sticky; /* 영역 안 고정*/
+  top: 0;
+  left: 0;
+  width: calc(100% + 10rem);
+  padding: 1.5rem 0;
+  margin-left: -5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-bottom: 1px solid #eee;
+}
+
+/* 페이지 백 버튼*/
+.page_title_box .page_back {
+  position: absolute;
+  top: 50%;
+  left: 2rem;
+  transform: translateY(-50%);
+}
+
+.btn_add {
+  width: 5rem;
+  aspect-ratio: 1/1;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: var(--primary-color);
+  
+  position: absolute;
+  top: 50%;
+  right: 2rem;
+  transform: translateY(-50%);
+}
+
+.btn_add:hover {
+  transform: translateY(-50%) rotate(180deg);
+}
+
+
+.menu_container {
+  flex-direction: column;
+}
+

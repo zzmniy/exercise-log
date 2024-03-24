@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.7/prefixfree.min.js" integrity="sha512-p7Ey2nBhKYEi9yh0iDs+GMA0ttebOqVl3OO2oWRzRxtDoN/RedyYcHFUJZhMVi8NKRdEA7n+9NTNQX/kFIZgNw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <!-- 폰트_프리텐다드-->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pretendard/1.3.9/static/pretendard.css" integrity="sha512-NzqTHTrO48HsIamogmIaVhTXoSgRF24Cn+ynrNYrFuKrY0AdDbmcNieiOHsQARS/r0Gax9VwV3/rVMHs3ipUlg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <!-- CSS -->
+  <link rel="stylesheet" href="./css/common.css">
+  <link rel="stylesheet" href="./css/mypage/mypage.css">
+  <link rel="stylesheet" href="./css/mypage/modal.css">
+  <title>할수잇서</title>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body style ="margin-bottom: 790px !important;">
+	<div class="page_title_box">
+		<a href="javascript:history.go(-1)" class="page_back"><img src="img/page_back.svg"></a>
+		<h2 class="page_title">마이페이지</h2>
+	</div>
+
+  <div class="mypage_wrap">
+    <section id="first_info">
+      <div id="profile">
+        <img src="./img/user.png" alt="프로필 기본 이미지">
+      </div>
+
+      <div class="info">
+        <span class="nickname">닉네임</span>
+        <span>이메일</span>
+      </div>
+    </div>
+  </section>
+
+    <div class="details_info">
+      <div class="cmkg">
+          <div class="input-group">
+              <label for="height">신장</label>
+              <input type="text" id="height" name="height">
+              <span class="unit">cm</span>
+          </div>
+          <div class="input-group">
+              <label for="weight">체중</label>
+              <input type="text" id="weight" name="weight">
+              <span class="unit">kg</span>
+            </div>
+      </div>
+  </div>
+    
+
+        <div class="service">
+          <div class="content">
+            <span>개인정보 처리 방침 <br /></span>
+            <span>서비스 이용약관</span>
+          </div>
+        </div>
+
+      <div class="privacy">
+        <div class="content">
+          <span><a href="change_pwd.html">비밀번호 변경 </a><br /></span>
+          <span class="logout">로그아웃 <br /></span>
+          <span><a href="account_leave.html">회원탈퇴</a></span>
+       </div>
+      </div>
+
+      <div id="myModal" class="modal">
+          <div class="modal-content">
+              <div class="header">
+                <h2>로그아웃</h2>
+              </div>
+
+            <p>로그아웃 하시겠습니까?</p>
+            <button id="cancel">취소</button>
+            <button id = "confirm">확인</button>
+          </div>
+        <script src="./script/modal.js"></script>
+      </div>
+      
+</div>
+  
+
+  <nav class="menu_container">
+    <ul class="bottom_menu">
+      <li class="menu">
+        <a href="#"><img src="./img/home.png"></img></a>
+      </li>
+
+      <li class="menu">
+        <a href="./diary.html"><img src="./img/calendar.png"></img></a>
+      </li>
+
+      <li class="menu">
+        <a href="./social.html"><img src="./img/social.png"></img></a>
+      </li>
+
+      <li class="menu">
+        <a href="./mypage.html"><img src="./img/setting hover.png"></img></a>
+      </li>
+      
+    </ul>
+  </nav>
+</body>
+  </html>

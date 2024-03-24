@@ -1,0 +1,38 @@
+@charset "utf-8";
+ul {
+  list-style: none;
+}
+
+
+/*페이지 타이틀 박스*/
+.page_title_box {
+  position: sticky; /* 영역 안 고정*/
+  top: 0;
+  left: 0;
+  width: calc(100% + 10rem);
+  padding: 1.5rem 0;
+  margin-left: -5rem;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  border-bottom: 1px solid #eee;
+}
+
+.page_title_box .page_title {
+  padding-left: 50px;
+  padding-top: 3px;
+  margin-left: 10px;
+}
+
+.calender {
+  border: 1px solid red;
+  width: 400px;
+  height: 400px;
+  margin-top: 150px;
+}
+
+
+.btn_wrap {
+  padding-top: 50px;
+}
+
