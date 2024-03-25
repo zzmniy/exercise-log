@@ -15,7 +15,7 @@ a {
   left: 0;
   width: calc(100% + 10rem);
   padding: 1.5rem 0;
-  margin-left: 0rem;
+  margin-left: -5rem;
   display: flex;
   justify-content: flex-start;
   align-items: center;
@@ -34,9 +34,9 @@ a {
 
 .page_title_box .page_title {
   padding-top: 3px;
-  margin-right: 20px;
+  margin-right: -15px;
   cursor: pointer;
-
+  margin-left: 5rem;
 }
 
 .calender {
