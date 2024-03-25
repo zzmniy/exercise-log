@@ -29,7 +29,7 @@ body {
     overflow-x: hidden;
     background: #fff;
     box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
-    position: relative; /*지워라*/
+    position: relative;
 }
 
 button {

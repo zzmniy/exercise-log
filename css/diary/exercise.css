@@ -1,0 +1,53 @@
+@charset "utf-8";
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: #222;
+}
+
+/*페이지 타이틀 박스*/
+.page_title_box {
+  position: sticky; /* 영역 안 고정*/
+  top: 0;
+  left: 0;
+  width: calc(100% + 10rem);
+  padding: 1.5rem 0;
+  margin-left: 0rem;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  border-bottom: 1px solid #eee;
+}
+
+.exercise-page .page_title_box a[href="exercise.html"] {
+  color: #222; /* 운동 일지 텍스트 색상 */
+  padding-bottom: 6px;
+  border-bottom: 2px solid var(--primary-color);
+}
+
+.exercise-page .page_title_box a[href="diet.html"] {
+  color: #ddd; /* 식단 일지 텍스트 색상 */
+}
+
+
+.page_title_box .page_title {
+  padding-top: 3px;
+  padding-right: 20px;
+  cursor: pointer;
+}
+
+.calender {
+  border: 1px solid red;
+  width: 400px;
+  height: 400px;
+  margin-top: 60px;
+}
+
+
+.btn_wrap {
+  padding-top: 50px;
+}
+
