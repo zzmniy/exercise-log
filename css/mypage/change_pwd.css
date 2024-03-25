@@ -60,11 +60,13 @@ span {
   bottom: -20px;
 }
 
+/*
 .header {
   font-size: 3rem;
   font-weight: 800;
   letter-spacing: -0.02em;
 }
+*/
 
 button {
   border: none;
@@ -72,7 +74,22 @@ button {
   align-items: center;
   color: #fff;
   padding: 10px;
+  padding-left: 30px;
+  padding-right: 30px;
   background: #25CB7B;
   border-radius: 8px;
   margin-top: 20px;
 }
+
+.login_btn {
+  border: none;
+  padding: 20px;
+  width: 100%;
+  position: absolute;
+  bottom: 0px;
+  left: 0px;
+  border-radius: 0 0 10px 10px;
+  background-color: #25CB7B;
+  color: white;
+}
+

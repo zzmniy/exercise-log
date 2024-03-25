@@ -1,10 +1,5 @@
 {
-	"folders": [
-		{
-			"name": "mypage",
-			"path": "."
-		}
-	],
+	"folders": [],
 	"settings": {
 		"liveServer.settings.multiRootWorkspaceName": "social"
 	}

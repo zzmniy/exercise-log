@@ -33,6 +33,7 @@
 
 .header {
   margin-top: 30px;
+
 }
 
 .modal-content p {
@@ -62,7 +63,6 @@
   color: white;
 }
 
-
 .modal2 {
   display: none;
   display: none;
@@ -74,4 +74,16 @@
   background-color: rgba(0, 0, 0, 0.4);
   width: 100%;
   height: 100%;
+}
+
+.modal-content #login {
+  border: none;
+  padding: 20px;
+  width: 100%;
+  position: absolute;
+  bottom: 0px;
+  left: 0px;
+  border-radius: 0 0 10px 10px;
+  background-color: #25CB7B;
+  color: white;
 }
