@@ -39,12 +39,112 @@ a {
   margin-left: 5rem;
 }
 
-.calender {
-  border: 1px solid red;
-  width: 400px;
-  height: 400px;
-  margin-top: 60px;
+/*캘린더*/
+
+.clearfix:after {
+  content: '';
+  display: block;
+  clear: both;
+  float: none;
 }
+
+/* ======== Calendar ======== */
+.my-calendar {
+  width: 700px;
+  padding: 20px 20px 10px;
+  text-align: center;
+  font-weight: 800;
+  cursor: default;
+  margin-left: -30px;
+  margin-top: 30px;
+}
+
+.my-calendar .calendar-box {
+  float: left;
+  width: 58%;
+  padding-left: 30px;
+}
+
+
+.ctr-box {
+  padding: 0 16px;
+  margin-bottom: 20px;
+  font-size: 20px;
+}
+.ctr-box .btn-cal {
+  position: relative;
+  float: left;
+  width: 25px;
+  height: 25px;
+  margin-top: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  border: none;
+  background: none;
+}
+.ctr-box .btn-cal:after {
+  content: '<';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  line-height: 25px;
+  font-weight: bold;
+  font-size: 20px;
+}
+.ctr-box .btn-cal.next {
+  float: right;
+}
+.ctr-box .btn-cal.next:after {
+  content: '>';
+}
+
+.cal-table {
+  width: 100%;
+}
+.cal-table th {
+  width: 14.2857%;
+  padding-bottom: 5px;
+  font-size: 16px;
+  font-weight: 900;
+}
+.cal-table td {
+  padding: 3px 0;
+  height: 50px;
+  font-size: 15px;
+  vertical-align: middle;
+}
+.cal-table td.day {
+  position: relative;
+  cursor: pointer;
+}
+.cal-table td.today {
+  background: #ffd255;
+  border-radius: 50%;
+  color: #fff;
+}
+.cal-table td.day-active {
+  background: #ff8585;
+  border-radius: 50%;
+  color: #fff;
+}
+.cal-table td.has-event:after {
+  content: '';
+  display: block;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 4px;
+  background: #FFC107;
+}
+
+
+.btn_wrap {
+  padding-top: 50px;
+}
+
 
 
 .btn_wrap {

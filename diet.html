@@ -11,7 +11,7 @@
   <link rel="stylesheet" href="css/diary/diet.css">
   <title>할수잇서</title>
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-</head>
+  <script src="./script/diet.js"></script>
 </head>
 
   <body class="diet-page" style ="margin-bottom: 790px !important;">
@@ -20,9 +20,39 @@
       <a href="diet.html"><h2 class="page_title">식단 일지</a></h2>
     </div>
 
-    <div class="calender">
-      캘린더 자리
-    </div>
+
+    <div class="container">
+      <div class="my-calendar clearfix">
+        <div class="clicked-date">
+          <div class="cal-day"></div>
+          <div class="cal-date"></div>
+        </div>
+        <div class="calendar-box">
+          <div class="ctr-box clearfix">
+            <button type="button" title="prev" class="btn-cal prev">
+            </button>
+            <span class="cal-month"></span>
+            <span class="cal-year"></span>
+            <button type="button" title="next" class="btn-cal next">
+            </button>
+          </div>
+          <table class="cal-table">
+            <thead>
+              <tr>
+                <th>S</th>
+                <th>M</th>
+                <th>T</th>
+                <th>W</th>
+                <th>T</th>
+                <th>F</th>
+                <th>S</th>
+              </tr>
+            </thead>
+            <tbody class="cal-body"></tbody>
+          </table>
+        </div>
+      </div>
+  </div>
 
     <div class="btn_wrap">
       <button class="btn btn_style01">식단 일지 작성</button>
