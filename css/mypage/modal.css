@@ -24,12 +24,19 @@
   margin-top: -50px;
 }
 
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
 .header {
   margin-top: 30px;
 }
 
 .modal-content p {
-  margin-top: 30px;
+  margin-top: 20px;
   
 }
 

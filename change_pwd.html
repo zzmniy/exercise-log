@@ -9,6 +9,7 @@
   <!-- CSS -->
   <link rel="stylesheet" href="css/common.css">
   <link rel="stylesheet" href="css/mypage/change_pwd.css">
+  <link rel="stylesheet" href="./css/mypage/modal.css">
   <title>할수잇서</title>
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
@@ -42,7 +43,20 @@
     </div>
 
     <div class="btn_wrap">
-      <button type="submit" class="btn btn_style01">완료</button>
+      <button type="submit" class="btn btn_style01" id="button">완료</button>
+    </div>
+
+    <div id="mymodal" class="modal">
+      <div class="modal-content">
+        <div class="header">
+          비밀번호 변경 완료
+        </div>
+
+        <p class="complete">비밀번호가 변경되었습니다.<br />
+        지금 로그인 하시겠습니까?</p>
+        <button>로그인</button>
+      </div>
+      <script src="./script/change_pwd.js"></script>
     </div>
 
 

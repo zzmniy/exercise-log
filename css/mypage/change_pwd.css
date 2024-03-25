@@ -59,3 +59,20 @@ span {
   position: absolute;
   bottom: -20px;
 }
+
+.header {
+  font-size: 3rem;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+}
+
+button {
+  border: none;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  padding: 10px;
+  background: #25CB7B;
+  border-radius: 8px;
+  margin-top: 20px;
+}

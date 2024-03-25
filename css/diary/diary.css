@@ -22,13 +22,15 @@ ul {
   padding-left: 50px;
   padding-top: 3px;
   margin-left: 10px;
+  cursor: pointer;
+
 }
 
 .calender {
   border: 1px solid red;
   width: 400px;
   height: 400px;
-  margin-top: 150px;
+  margin-top: 60px;
 }
 
 
