@@ -53,17 +53,24 @@ a {
   width: 700px;
   padding: 20px 20px 10px;
   text-align: center;
-  font-weight: 800;
   cursor: default;
   margin-left: -30px;
-  margin-top: 30px;
+  margin-top: 8px;
 }
 
 .my-calendar .calendar-box {
   float: left;
   width: 58%;
-  padding-left: 30px;
+  padding: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+  border-radius: 8px;
+  margin: 0 18px;
+
 }
+.my-calendar .cal-table th:nth-child(1) {
+  color: #ff5252;
+}
+
 
 
 .ctr-box {
@@ -106,8 +113,8 @@ a {
 .cal-table th {
   width: 14.2857%;
   padding-bottom: 5px;
-  font-size: 16px;
-  font-weight: 900;
+  font-size: 20px;
+  color: #c9c9c9;
 }
 .cal-table td {
   padding: 3px 0;
@@ -144,10 +151,3 @@ a {
 .btn_wrap {
   padding-top: 50px;
 }
-
-
-
-.btn_wrap {
-  padding-top: 50px;
-}
-

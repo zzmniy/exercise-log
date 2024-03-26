@@ -2,7 +2,7 @@
 // START YOUR APP HERE
 // ================================
 const init = {
-  monList: ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'],
+  monList: ['1월', '2월', '3월', '4월', '5월', '6월', '7월', '8월', '9월', '10월', '11월', '12월'],
   dayList: ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'],
   today: new Date(),
   monForChange: new Date().getMonth(),
@@ -43,8 +43,8 @@ const $btnPrev = document.querySelector('.btn-cal.prev');
  * @param {number} dayIn
 */
 function loadDate (date, dayIn) {
-  document.querySelector('.cal-date').textContent = date;
-  document.querySelector('.cal-day').textContent = init.dayList[dayIn];
+  document.querySelector('.cal-date').textContent = [];
+  document.querySelector('.cal-day').textContent = [];
 }
 
 /**
@@ -61,8 +61,7 @@ function loadYYMM (fullDate) {
     markToday = init.today.getDate();
   }
 
-  document.querySelector('.cal-month').textContent = init.monList[mm];
-  document.querySelector('.cal-year').textContent = yy;
+  document.querySelector('.cal-month').textContent = yy + '년 ' + init.monList[mm]; // 수정된 부분
 
   let trtd = '';
   let startCount;

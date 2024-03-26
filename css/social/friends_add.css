@@ -39,7 +39,7 @@ a {
   border: 1px solid black;
   border-radius: 5px;
   padding: 40px;
-  margin-top: 90px;
+  margin-top: 25px;
 
 }
 
@@ -76,6 +76,6 @@ button {
 .friends_list {
   border: 1px solid black;
   border-radius: 5px;
-  padding: 190px;
+  padding: 130px;
 
 }

@@ -11,7 +11,7 @@
   <link rel="stylesheet" href="css/diary/diet.css">
   <title>할수잇서</title>
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-  <script src="./script/diet.js"></script>
+  <script type="module" src="./script/diet.js"></script>
 </head>
 
   <body class="diet-page" style ="margin-bottom: 790px !important;">
@@ -19,7 +19,6 @@
       <a href="exercise.html"><h2 class="page_title">운동 일지</a></h2>
       <a href="diet.html"><h2 class="page_title">식단 일지</a></h2>
     </div>
-
 
     <div class="container">
       <div class="my-calendar clearfix">
@@ -39,13 +38,13 @@
           <table class="cal-table">
             <thead>
               <tr>
-                <th>S</th>
-                <th>M</th>
-                <th>T</th>
-                <th>W</th>
-                <th>T</th>
-                <th>F</th>
-                <th>S</th>
+                <th>일</th>
+                <th>월</th>
+                <th>화</th>
+                <th>수</th>
+                <th>목</th>
+                <th>금</th>
+                <th>토</th>
               </tr>
             </thead>
             <tbody class="cal-body"></tbody>
@@ -53,6 +52,7 @@
         </div>
       </div>
   </div>
+
 
     <div class="btn_wrap">
       <button class="btn btn_style01">식단 일지 작성</button>
