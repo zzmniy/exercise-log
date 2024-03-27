@@ -11,7 +11,13 @@
   <link rel="stylesheet" href="css/diary/exercise.css">
   <title>할수잇서</title>
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-  <script type="module" src="./script/exercise.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js" integrity="sha512-uto9mlQzrs59VwILcLiRYeLKPPbS/bT71da/OEBYEwcdNUk8jYIy+D176RYoop1Da+f9mvkYrmj5MCLZWEtQuA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.css" integrity="sha512-aOG0c6nPNzGk+5zjwyJaoRUgCdOrfSDhmMID2u4+OIslr0GjpLKo7Xm0Ao3xmpM4T8AmIouRkqwj1nrdVsLKEQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="./css/diary/exercise.css">
+  <script src="./script/exercise.js"></script>
+
 </head>
 </head>
 
@@ -22,44 +28,40 @@
       <a href="diet.html"><h2 class="page_title">식단 일지</a></h2>
     
     </div>
-
-      <div class="container">
-        <div class="my-calendar clearfix">
-          <div class="clicked-date">
-            <div class="cal-day"></div>
-            <div class="cal-date"></div>
-          </div>
-          <div class="calendar-box">
-            <div class="ctr-box clearfix">
-              <button type="button" title="prev" class="btn-cal prev">
-              </button>
-              <span class="cal-month"></span>
-              <span class="cal-year"></span>
-              <button type="button" title="next" class="btn-cal next">
-              </button>
-            </div>
-            <table class="cal-table">
-              <thead>
-                <tr>
-                  <th>일</th>
-                  <th>월</th>
-                  <th>화</th>
-                  <th>수</th>
-                  <th>목</th>
-                  <th>금</th>
-                  <th>토</th>
-                </tr>
-              </thead>
-              <tbody class="cal-body"></tbody>
-            </table>
-          </div>
-        </div>
-    </div>
+    <div id="calendar"></div>
 
 
     <div class="btn_wrap">
       <button id="exerciseButton" class="btn btn_style01">운동 일지 작성</button>
     </div>
+    <script>
+      // $ 기호 사용하여 함수 실행
+      $(function() {
+        // datepicker를 inline 모드로 초기화하여 특정 div에 적용
+        $("#calendar").datepicker({
+          inline: true
+        });
+      });
+      
+      // datepicker 기본값 설정
+      $.datepicker.setDefaults({
+        dateFormat: 'yy-mm-dd',
+        monthNames: ['1월', '2월', '3월', '4월', '5월', '6월', '7월', '8월', '9월', '10월', '11월', '12월'],
+        monthNamesShort: ['1월', '2월', '3월', '4월', '5월', '6월', '7월', '8월', '9월', '10월', '11월', '12월'],
+        dayNames: ['일', '월', '화', '수', '목', '금', '토'],
+        dayNamesShort: ['일', '월', '화', '수', '목', '금', '토'],
+        dayNamesMin: ['일', '월', '화', '수', '목', '금', '토'],
+        showMonthAfterYear: true,
+        yearSuffix: '년'
+      });
+      
+      // 클래스 이름이 datepicker인 요소에 datepicker 적용
+      $(function () {
+        $('.datepicker').datepicker();
+      });
+      </script>
+
+
 
     <nav class="menu_container">
       <ul class="bottom_menu">
