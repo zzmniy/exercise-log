@@ -33,6 +33,16 @@ a {
   color: #ddd; /* 식단 일지 텍스트 색상 */
 }
 
+.btn_wrap .btn_style01 {
+  
+  border: none;
+  display: block;
+  padding: 1.5rem 4rem;
+  color: #fff;
+  background: #25CB7B;
+  border-radius: 8px;
+}
+
 
 .page_title_box .page_title {
   padding-top: 3px;

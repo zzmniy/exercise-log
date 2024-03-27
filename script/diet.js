@@ -64,25 +64,23 @@ function loadYYMM (fullDate) {
   document.querySelector('.cal-month').textContent = yy + '년 ' + init.monList[mm]; // 수정된 부분
 
   let trtd = '';
-  let startCount;
-  let countDay = 0;
+  let countDay = 1;
   for (let i = 0; i < 6; i++) {
     trtd += '<tr>';
     for (let j = 0; j < 7; j++) {
-      if (i === 0 && !startCount && j === firstDay.getDay()) {
-        startCount = 1;
-      }
-      if (!startCount) {
-        trtd += '<td>'
+      if ((i === 0 && j < firstDay.getDay()) || countDay > lastDay.getDate()) {
+        trtd += '<td></td>'; // 첫 번째 주의 시작일 이전이거나 마지막 날짜 이후면 공백 셀 생성
       } else {
-        let fullDate = yy + '.' + init.addZero(mm + 1) + '.' + init.addZero(countDay + 1);
+        let fullDate = yy + '.' + init.addZero(mm + 1) + '.' + init.addZero(countDay);
         trtd += '<td class="day';
-        trtd += (markToday && markToday === countDay + 1) ? ' today" ' : '"';
-        trtd += ` data-date="${countDay + 1}" data-fdate="${fullDate}">`;
-      }
-      trtd += (startCount) ? ++countDay : '';
-      if (countDay === lastDay.getDate()) { 
-        startCount = 0; 
+        trtd += (markToday && markToday === countDay) ? ' today" ' : '"';
+        trtd += ` data-date="${countDay}" data-fdate="${fullDate}">`;
+        if (j === 0) {
+          trtd += '<span style="color: red;">' + countDay + '</span>';
+        } else {
+          trtd += countDay;
+        }
+        countDay++;
       }
       trtd += '</td>';
     }
