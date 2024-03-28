@@ -39,10 +39,9 @@ a {
 }
 
 .exercise-form {
-  margin-top: 20px;
+  margin-top: 60px;
   padding: 20px;
   width: 400px;
-  height: 600px;
   border: 1px solid #ccc;
   border-radius: 8px;
 }
@@ -59,6 +58,8 @@ a {
   margin-bottom: 5px;
   font-size: 2.3rem;
   margin-top: 15px;
+  display: flex;
+
 }
 
 
@@ -77,7 +78,6 @@ a {
 }
 
 .time-inputs span {
-  margin: 0 40px; /* ~ 기호 좌우 간격 설정 */
   font-size: 22px;
 }
 /* 시간 입력칸 스타일링 */
@@ -103,8 +103,6 @@ input[type="time"] {
   background: transparent; /* 배경 투명으로 설정 */
 }
 
-
-
 textarea {
   width: 357px;
   margin-top: -20px;
@@ -112,6 +110,7 @@ textarea {
 
 #exerciseType {
   margin-top: 10px;
+  width: 100%;
 }
 
 #saveButton {
@@ -123,6 +122,7 @@ textarea {
   border: none;
   transition: .3s;
   display: block;
+  margin-top: 10px;
   padding: 1.5rem 4rem;
   color: #fff;
   background: #25CB7B;

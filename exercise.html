@@ -28,11 +28,13 @@
       <a href="diet.html"><h2 class="page_title">식단 일지</a></h2>
     
     </div>
+
     <div id="calendar"></div>
 
-
+    <!--운동일지 작성 버튼-->
     <div class="btn_wrap">
-      <button id="exerciseButton" class="btn btn_style01" onclick="location.href='exercise_add.html'">운동 일지 작성</button>
+      <button id="exerciseButton" class="btn btn_style01" 
+      onclick="location.href='exercise_add.html'">운동 일지 작성</button>
     </div>
 
     <div id="exerciseMemo" style="display: none;">
@@ -71,11 +73,11 @@
       // 클래스 이름이 datepicker인 요소에 datepicker 적용
       $(function () {
         $('.datepicker').datepicker();
-      });
- // 운동 일지 작성 버튼 클릭 시
- document.getElementById("exerciseJournalButton").addEventListener("click", function() {
-      // 운동 일지 작성 버튼 숨기기
-      this.style.display = "none";
+            });
+      // 운동 일지 작성 버튼 클릭 시
+      document.getElementById("exerciseJournalButton").addEventListener("click", function() {
+            // 운동 일지 작성 버튼 숨기기
+            this.style.display = "none";
 
       // 운동 메모를 입력할 input과 저장 버튼 보이기
       document.getElementById("exerciseMemoContainer").style.display = "block";
