@@ -39,5 +39,71 @@ a {
 }
 
 .exercise-form {
-  border: 1px solid red;
+  margin-top: 20px;
+  padding: 20px;
+  width: 400px;
+  height: 600px;
 }
+
+#exerciseForm {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 40px;
+  background-color:#e4e4e4;  
+  border-radius: 8px;
+}
+
+
+#exerciseForm label {
+  margin-left: 3rem;
+  margin-bottom: 5px;
+  font-size: 2.3rem;
+  margin-top: 15px;
+}
+
+.time-inputs {
+  display: flex;
+  align-items: center; /* 수직 가운데 정렬 */
+  border: 1px solid red;
+  padding: 20px;
+}
+
+.time-inputs input {
+  margin-right: 5px; /* 입력란 사이의 간격 설정 */
+}
+
+.time-inputs span {
+  margin: 0 5px; /* ~ 기호 좌우 간격 설정 */
+}
+
+
+/* 시간 입력란 사이에 ~ 기호를 추가하고 간격을 조절합니다. */
+.time-inputs input[type="time"] {
+  margin-right: 5px; /* 시간 입력란 사이의 간격 조절 */
+}
+
+
+textarea {
+  width: 357px;
+  margin-top: -20px;
+}
+
+#exerciseType {
+  margin-top: 10px;
+}
+
+#saveButton {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  font-family: 'Pretendard', sans-serif !important;
+  font-weight: 300;
+  border: none;
+  transition: .3s;
+  display: block;
+  padding: 1.5rem 4rem;
+  color: #fff;
+  background: #25CB7B;
+  border-radius: 8px;
+}
+

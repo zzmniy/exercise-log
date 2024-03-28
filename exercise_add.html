@@ -27,25 +27,38 @@
 	</div>
 
   <div class="exercise-form">
+    <div id="exerciseForm">
+      <label for="exerciseType">운동 선택</label>
+      <select id="exerciseType" name="exerciseType" onchange="showExerciseOption()">
+          <option value="" disabled selected hidden>탭하여 운동을 추가하세요</option>
+          <option value="걷기">걷기</option>
+          <option value="계단">계단</option>
+          <option value="수영">수영</option>
+          <option value="요가">요가</option>
+          <option value="복싱">복싱</option>
+          <option value="줄넘기">줄넘기</option>
+          <option value="자전거">자전거</option>
+          <option value="달리기">달리기</option>
+          <option value="스쿼트">스쿼트</option>
+          <!-- 다른 운동 종류도 추가할 수 있습니다. -->
+        </select>
 
-    <div class="exerciseForm">
-      <label for="exerciseType" name="dxerciseType">
-        <option value="운동1">운동1</option>
-        <option value="운동2">운동2</option>
-        <option value="운동3">운동3</option>
-        <!-- 원하는 운동 항목을 추가하세요 -->
-      </label><br><br>
+        <br><br>
+        <label for="startTime">운동 시간</label>
+        <div class="time-inputs">
+          <input type="time" id="startTime" name="startTime">
+          <span>~&nbsp;</span>
+          <input type="time" id="endTime" name="endTime">
+        </div>
 
-      <label for="exerciseTime">운동 시간:</label>
-      <input type="text" id="exerciseTime" name="exerciseTime"><br><br>
+        <br><br>
+        <label for="exerciseMemo">운동 메모</label><br>
+        <textarea id="exerciseMemo" name="exerciseMemo" rows="4" cols="50"></textarea>
+        <br><br>
+      </div>
 
-      <label for="exerciseMemo">운동 메모:</label><br>
-      <textarea id="exerciseMemo" name="exerciseMemo"></textarea><br><br>
-
-      <button type="submit" id="saveExercise">저장</button>
-    </form>
+      <button id="saveButton">저장</button>
     </div>
-  </div>
 
   <script>
     /* eslint-disable no-undef */
@@ -61,16 +74,21 @@
  
     $('#exerciseForm').submit(function(event) {
   event.preventDefault(); // 기본 동작 방지
-
-  // 입력된 값 가져오기
-  var exerciseType = $('#exerciseType').val();
-  var exerciseTime = $('#exerciseTime').val();
-  var exerciseMemo = $('#exerciseMemo').val();
-
-  // 운동 기록 생성
-  var exerciseRecord = "<p><strong>운동 선택:</strong> " + exerciseType + "</p>" +
-                       "<p><strong>운동 시간:</strong> " + exerciseTime + "</p>" +
-                       "<p><strong>운동 메모:</strong> " + exerciseMemo + "</p>";
+  $(document).ready(function(){
+  $('#saveButton').click(function(){
+    var exerciseType = $('#exerciseType').val();
+    var exerciseTime = $('#exerciseTime').val();
+    var exerciseMemo = $('#exerciseMemo').val();
+    var startTime = $('#startTime').val();
+    var endTime = $('#endTime').val();  
+    // 시작 시간과 종료 시간 사이에 ~ 추가
+    var timeRange = startTime.substring(0, 5) + ' ~ ' + endTime.substring(0, 5);
+    // 여기서 선택한 운동 종류, 운동 시간, 운동 메모를 다음 페이지로 전달하거나 저장할 수 있습니다.
+    console.log("운동 종류:", exerciseType);
+    console.log("운동 시간:", timeRange);
+    console.log("운동 메모:", exerciseMemo);
+  });
+});
 
   // 운동 기록을 exerciseLog에 추가
   $('#exerciseLog').append(exerciseRecord);
@@ -78,6 +96,13 @@
   // 입력 폼 초기화
   $('#exerciseForm')[0].reset();
 });
+function showExerciseOption() {
+    var selectBox = document.getElementById("exerciseType");
+    var selectedValue = selectBox.options[selectBox.selectedIndex].value;
+    if (selectedValue !== "") {
+      alert("선택한 운동: " + selectedValue);
+    }
+  }
 
   </script>
 
