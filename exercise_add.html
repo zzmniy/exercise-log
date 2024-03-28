@@ -23,10 +23,84 @@
 <body style ="margin-bottom: 790px !important;">
 	<div class="page_title_box">
 		<a href="javascript:history.go(-1)" class="page_back"><img src="img/page_back.svg"></a>
-		<h2 class="page_title">운동 일지</h2>
+    <h2 id="displayDate"></h2>
 	</div>
 
-  <div id="selectedDate"></div>
+  <div class="exercise-form">
 
+    <div class="exerciseForm">
+      <label for="exerciseType" name="dxerciseType">
+        <option value="운동1">운동1</option>
+        <option value="운동2">운동2</option>
+        <option value="운동3">운동3</option>
+        <!-- 원하는 운동 항목을 추가하세요 -->
+      </label><br><br>
+
+      <label for="exerciseTime">운동 시간:</label>
+      <input type="text" id="exerciseTime" name="exerciseTime"><br><br>
+
+      <label for="exerciseMemo">운동 메모:</label><br>
+      <textarea id="exerciseMemo" name="exerciseMemo"></textarea><br><br>
+
+      <button type="submit" id="saveExercise">저장</button>
+    </form>
+    </div>
+  </div>
+
+  <script>
+    /* eslint-disable no-undef */
+
+    $(document).ready(function(){
+      var queryString = window.location.search;
+      var urlParams = new URLSearchParams(queryString);
+      var selectedDate = urlParams.get('date');
+
+
+      $('#displayDate').text(selectedDate);
+    })
+ 
+    $('#exerciseForm').submit(function(event) {
+  event.preventDefault(); // 기본 동작 방지
+
+  // 입력된 값 가져오기
+  var exerciseType = $('#exerciseType').val();
+  var exerciseTime = $('#exerciseTime').val();
+  var exerciseMemo = $('#exerciseMemo').val();
+
+  // 운동 기록 생성
+  var exerciseRecord = "<p><strong>운동 선택:</strong> " + exerciseType + "</p>" +
+                       "<p><strong>운동 시간:</strong> " + exerciseTime + "</p>" +
+                       "<p><strong>운동 메모:</strong> " + exerciseMemo + "</p>";
+
+  // 운동 기록을 exerciseLog에 추가
+  $('#exerciseLog').append(exerciseRecord);
+
+  // 입력 폼 초기화
+  $('#exerciseForm')[0].reset();
+});
+
+  </script>
+
+
+    <nav class="menu_container">
+      <ul class="bottom_menu">
+        <li class="menu">
+          <a href="#"><img src="./img/home.png"></img></a>
+        </li>
+  
+        <li class="menu">
+          <a href="./exercise.html"><img src="./img/calendar hover.png"></img></a>
+        </li>
+  
+        <li class="menu">
+          <a href="./social.html"><img src="./img/social.png"></img></a>
+        </li>
+  
+        <li class="menu">
+          <a href="./mypage.html"><img src="./img/setting.png"></img></a>
+        </li>
+        
+      </ul>
+    </nav>
 </body>
 </html>
