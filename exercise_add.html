@@ -1,69 +1,80 @@
 <!DOCTYPE html>
 <html lang="ko">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.7/prefixfree.min.js" integrity="sha512-p7Ey2nBhKYEi9yh0iDs+GMA0ttebOqVl3OO2oWRzRxtDoN/RedyYcHFUJZhMVi8NKRdEA7n+9NTNQX/kFIZgNw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.7/prefixfree.min.js"
+    integrity="sha512-p7Ey2nBhKYEi9yh0iDs+GMA0ttebOqVl3OO2oWRzRxtDoN/RedyYcHFUJZhMVi8NKRdEA7n+9NTNQX/kFIZgNw=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
   <!-- 폰트_프리텐다드-->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pretendard/1.3.9/static/pretendard.css" integrity="sha512-NzqTHTrO48HsIamogmIaVhTXoSgRF24Cn+ynrNYrFuKrY0AdDbmcNieiOHsQARS/r0Gax9VwV3/rVMHs3ipUlg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pretendard/1.3.9/static/pretendard.css"
+    integrity="sha512-NzqTHTrO48HsIamogmIaVhTXoSgRF24Cn+ynrNYrFuKrY0AdDbmcNieiOHsQARS/r0Gax9VwV3/rVMHs3ipUlg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
   <!-- CSS -->
   <link rel="stylesheet" href="./css/common.css">
   <link rel="stylesheet" href="./css/diary/exercise_add.css">
 
   <title>할수잇서</title>
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js" integrity="sha512-uto9mlQzrs59VwILcLiRYeLKPPbS/bT71da/OEBYEwcdNUk8jYIy+D176RYoop1Da+f9mvkYrmj5MCLZWEtQuA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.css" integrity="sha512-aOG0c6nPNzGk+5zjwyJaoRUgCdOrfSDhmMID2u4+OIslr0GjpLKo7Xm0Ao3xmpM4T8AmIouRkqwj1nrdVsLKEQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-  <script type="module"src="./script/exercise_add.js"></script>
-
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"
+    integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"
+    integrity="sha512-uto9mlQzrs59VwILcLiRYeLKPPbS/bT71da/OEBYEwcdNUk8jYIy+D176RYoop1Da+f9mvkYrmj5MCLZWEtQuA=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.css"
+    integrity="sha512-aOG0c6nPNzGk+5zjwyJaoRUgCdOrfSDhmMID2u4+OIslr0GjpLKo7Xm0Ao3xmpM4T8AmIouRkqwj1nrdVsLKEQ=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <script type="module" src="./script/exercise_add.js"></script>
 
 </head>
 
-<body style ="margin-bottom: 790px !important;">
-	<div class="page_title_box">
-		<a href="javascript:history.go(-1)" class="page_back"><img src="img/page_back.svg"></a>
+<body style="margin-bottom: 790px !important;">
+  <div class="page_title_box">
+    <a href="javascript:history.go(-1)" class="page_back"><img src="img/page_back.svg"></a>
     <h2 id="displayDate"></h2>
-	</div>
+  </div>
 
   <div class="exercise-form">
     <div id="exerciseForm">
       <label for="exerciseType">운동 선택</label>
       <select id="exerciseType" name="exerciseType" onchange="showExerciseOption()">
-          <option value="" disabled selected hidden>탭하여 운동을 추가하세요</option>
-          <option value="걷기">걷기</option>
-          <option value="계단">계단</option>
-          <option value="수영">수영</option>
-          <option value="요가">요가</option>
-          <option value="복싱">복싱</option>
-          <option value="줄넘기">줄넘기</option>
-          <option value="자전거">자전거</option>
-          <option value="달리기">달리기</option>
-          <option value="스쿼트">스쿼트</option>
-          <!-- 다른 운동 종류도 추가할 수 있습니다. -->
-        </select>
+        <option value="" disabled selected hidden class="disabled">탭하여 운동을 추가하세요</option>
+        <option value="걷기">걷기</option>
+        <option value="계단">계단</option>
+        <option value="수영">수영</option>
+        <option value="요가">요가</option>
+        <option value="복싱">복싱</option>
+        <option value="줄넘기">줄넘기</option>
+        <option value="자전거">자전거</option>
+        <option value="달리기">달리기</option>
+        <option value="스쿼트">스쿼트</option>
+        <!-- 다른 운동 종류도 추가할 수 있습니다. -->
+      </select>
 
-        <br><br>
-        <label for="startTime">운동 시간</label>
-        <div class="time-inputs">
-          <input type="time" id="startTime" name="startTime">
-          <span>~&nbsp;</span>
-          <input type="time" id="endTime" name="endTime">
-        </div>
-
-        <br><br>
-        <label for="exerciseMemo">운동 메모</label><br>
-        <textarea id="exerciseMemo" name="exerciseMemo" rows="4" cols="50"></textarea>
-        <br><br>
+      <br><br>
+      <label for="startTime">운동 시간</label>
+      <div class="time-inputs">
+        <input type="time" id="startTime" name="startTime">
+        <span>~&nbsp;</span>
+        <input type="time" id="endTime" name="endTime">
       </div>
 
-      <button id="saveButton">저장</button>
+      <br><br>
+      <label for="exerciseMemo">운동 메모</label><br>
+      <textarea id="exerciseMemo" name="exerciseMemo" rows="4" cols="50" placeholder="메모를 입력하세요"></textarea>
+      <br><br>
     </div>
+
+    <button id="saveButton">저장</button>
+  </div>
 
   <script>
     /* eslint-disable no-undef */
 
-    $(document).ready(function(){
+
+    $(document).ready(function () {
       var queryString = window.location.search;
       var urlParams = new URLSearchParams(queryString);
       var selectedDate = urlParams.get('date');
@@ -71,61 +82,72 @@
 
       $('#displayDate').text(selectedDate);
     })
- 
-    $('#exerciseForm').submit(function(event) {
-  event.preventDefault(); // 기본 동작 방지
-  $(document).ready(function(){
-  $('#saveButton').click(function(){
-    var exerciseType = $('#exerciseType').val();
-    var exerciseTime = $('#exerciseTime').val();
-    var exerciseMemo = $('#exerciseMemo').val();
-    var startTime = $('#startTime').val();
-    var endTime = $('#endTime').val();  
-    // 시작 시간과 종료 시간 사이에 ~ 추가
-    var timeRange = startTime.substring(0, 5) + ' ~ ' + endTime.substring(0, 5);
-    // 여기서 선택한 운동 종류, 운동 시간, 운동 메모를 다음 페이지로 전달하거나 저장할 수 있습니다.
-    console.log("운동 종류:", exerciseType);
-    console.log("운동 시간:", timeRange);
-    console.log("운동 메모:", exerciseMemo);
-  });
-});
 
-  // 운동 기록을 exerciseLog에 추가
-  $('#exerciseLog').append(exerciseRecord);
+    $('#exerciseForm').submit(function (event) {
+      event.preventDefault(); // 기본 동작 방지
+      $(document).ready(function () {
+        $('#saveButton').click(function () {
+          var exerciseType = $('#exerciseType').val();
+          var exerciseTime = $('#exerciseTime').val();
+          var exerciseMemo = $('#exerciseMemo').val();
+          var startTime = $('#startTime').val();
+          var endTime = $('#endTime').val();
+          // 시작 시간과 종료 시간 사이에 ~ 추가
+          var timeRange = startTime.substring(0, 5) + ' ~ ' + endTime.substring(0, 5);
+          // 여기서 선택한 운동 종류, 운동 시간, 운동 메모를 다음 페이지로 전달하거나 저장할 수 있습니다.
+          console.log("운동 종류:", exerciseType);
+          console.log("운동 시간:", timeRange);
+          console.log("운동 메모:", exerciseMemo);
+          window.history.back();
 
-  // 입력 폼 초기화
-  $('#exerciseForm')[0].reset();
-});
-function showExerciseOption() {
-    var selectBox = document.getElementById("exerciseType");
-    var selectedValue = selectBox.options[selectBox.selectedIndex].value;
-    if (selectedValue !== "") {
-      alert("선택한 운동: " + selectedValue);
+        });
+      });
+
+      // 운동 기록을 exerciseLog에 추가
+      $('#exerciseLog').append(exerciseRecord);
+
+      // 입력 폼 초기화
+      $('#exerciseForm')[0].reset();
+    });
+    function showExerciseOption() {
+      var selectBox = document.getElementById("exerciseType");
+      var selectedValue = selectBox.options[selectBox.selectedIndex].value;
+      if (selectedValue !== "") {
+        alert("선택한 운동: " + selectedValue);
+      }
     }
-  }
+
+    function showExerciseOption() {
+      var selectBox = document.getElementById("exerciseType");
+      var selectedValue = selectBox.options[selectBox.selectedIndex].value;
+      if (selectedValue !== "") {
+        alert("선택한 운동: " + selectedValue);
+      }
+    }
 
   </script>
 
 
-    <nav class="menu_container">
-      <ul class="bottom_menu">
-        <li class="menu">
-          <a href="#"><img src="./img/home.png"></img></a>
-        </li>
-  
-        <li class="menu">
-          <a href="./exercise.html"><img src="./img/calendar hover.png"></img></a>
-        </li>
-  
-        <li class="menu">
-          <a href="./social.html"><img src="./img/social.png"></img></a>
-        </li>
-  
-        <li class="menu">
-          <a href="./mypage.html"><img src="./img/setting.png"></img></a>
-        </li>
-        
-      </ul>
-    </nav>
+  <nav class="menu_container">
+    <ul class="bottom_menu">
+      <li class="menu">
+        <a href="#"><img src="./img/home.png"></img></a>
+      </li>
+
+      <li class="menu">
+        <a href="./exercise.html"><img src="./img/calendar hover.png"></img></a>
+      </li>
+
+      <li class="menu">
+        <a href="./social.html"><img src="./img/social.png"></img></a>
+      </li>
+
+      <li class="menu">
+        <a href="./mypage.html"><img src="./img/setting.png"></img></a>
+      </li>
+
+    </ul>
+  </nav>
 </body>
+
 </html>

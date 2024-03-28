@@ -33,7 +33,10 @@
 
     <div class="btn_wrap">
       <button id="exerciseButton" class="btn btn_style01" onclick="location.href='exercise_add.html'">운동 일지 작성</button>
+    </div>
 
+    <div id="exerciseMemo" style="display: none;">
+      <p>운동 메모 표시</p>
     </div>
 
     <script>
@@ -69,6 +72,24 @@
       $(function () {
         $('.datepicker').datepicker();
       });
+ // 운동 일지 작성 버튼 클릭 시
+ document.getElementById("exerciseJournalButton").addEventListener("click", function() {
+      // 운동 일지 작성 버튼 숨기기
+      this.style.display = "none";
+
+      // 운동 메모를 입력할 input과 저장 버튼 보이기
+      document.getElementById("exerciseMemoContainer").style.display = "block";
+    });
+
+    // 저장 버튼 클릭 시
+    document.getElementById("saveExerciseMemoButton").addEventListener("click", function() {
+      var exerciseMemo = document.getElementById("exerciseMemoInput").value;
+      // 여기에 운동 메모를 저장하거나 처리하는 코드를 작성하세요
+
+      // 예시로 콘솔에 운동 메모 출력
+      console.log("운동 메모:", exerciseMemo);
+    });
+
       </script>
 
 

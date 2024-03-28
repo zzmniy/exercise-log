@@ -43,29 +43,33 @@ a {
   padding: 20px;
   width: 400px;
   height: 600px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
 }
 
 #exerciseForm {
   display: flex;
   flex-direction: column;
   margin-bottom: 40px;
-  background-color:#e4e4e4;  
   border-radius: 8px;
 }
 
 
 #exerciseForm label {
-  margin-left: 3rem;
   margin-bottom: 5px;
   font-size: 2.3rem;
   margin-top: 15px;
 }
 
+
+#exerciseType option {
+  padding: 5px; /* 위아래 여백 설정 */
+}
+
 .time-inputs {
   display: flex;
   align-items: center; /* 수직 가운데 정렬 */
-  border: 1px solid red;
-  padding: 20px;
+  border: 1px solid #ccc;
 }
 
 .time-inputs input {
@@ -73,14 +77,32 @@ a {
 }
 
 .time-inputs span {
-  margin: 0 5px; /* ~ 기호 좌우 간격 설정 */
+  margin: 0 40px; /* ~ 기호 좌우 간격 설정 */
+  font-size: 22px;
 }
-
+/* 시간 입력칸 스타일링 */
+input[type="time"] {
+  padding: 8px; /* 내부 여백 설정 */
+  border:none; /* 테두리 설정 */
+  border-radius: 4px; /* 테두리 모서리를 둥글게 만듭니다. */
+  font-size: 16px; /* 폰트 크기 설정 */
+}
 
 /* 시간 입력란 사이에 ~ 기호를 추가하고 간격을 조절합니다. */
 .time-inputs input[type="time"] {
-  margin-right: 5px; /* 시간 입력란 사이의 간격 조절 */
+  margin-right: -3px; /* 시간 입력란 사이의 간격 조절 */
+  font-family: 'Pretendard', sans-serif; /* 원하는 글꼴로 변경 */
+  font-size: 16px; /* 원하는 글꼴 크기로 변경 */
 }
+
+/* 시간 입력 필드의 스타일 변경 */
+input[type="time"] {
+  -webkit-appearance: none; /* 웹킷 기본 스타일 제거 */
+  appearance: none; /* 기본 스타일 제거 */
+  padding: 10px; /* 내부 여백 제거 */
+  background: transparent; /* 배경 투명으로 설정 */
+}
+
 
 
 textarea {
