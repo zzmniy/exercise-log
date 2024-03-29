@@ -39,6 +39,30 @@ a {
   margin-left: 5rem;
 }
 
+#breakfast {
+  padding: 10px;
+  display: flex;
+}
+
+#lunch {
+  padding: 10px;
+  display: flex;
+}
+
+#dinner {
+  padding: 10px;
+  display: flex;
+}
+
+#snack {
+  padding: 10px;
+  display: flex;
+}
+
+button {
+  border: none;
+}
+
 .modal-content #meal-items {
   border: 1px solid red;
 }
