@@ -1,0 +1,15 @@
+<svg version="1.1" 
+xmlns="http://www.w3.org/2000/svg"
+ xmlns:xlink="http://www.w3.org/1999/xlink"
+ width="22" 
+ height="22"
+ viewBox="0,0,256,256">
+ <g fill="#25cb7b" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt" stroke-linejoin="miter" stroke-miterlimit="10" 
+ stroke-dasharray="" stroke-dashoffset="0" font-family="none" font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal">
+ <g transform="translate(0,0.00828) scale(0.5,0.5)">
+ <g transform="translate(0,512) scale(0.1,-0.1)">
+ <path d="M2480,4464c-42,-18 -86,-58 -108,-99c-15,-27 -17,-108 -22,-810l-5,-780l-780,-5c-858,-5 -805,-1 -867,-67c-76,-80 -76,-206 0,-286c62,-66 9,-62 867,-67l780,-5l5,-780c5,-858 1,-805 67,-867c80,-76 206,-76 286,0c66,62 62,9 67,867l5,780l780,5c858,5 805,1 867,67c76,80 76,206 0,286c-62,66 -9,62 -867,67l-780,5l-5,780c-5,702 -7,783 -22,810c-53,96 -172,140 -268,99z">
+ </path>
+ </g>
+ </g></g></svg>
+

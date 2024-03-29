@@ -42,7 +42,10 @@
     </a></h2>
   </div>
 
-  <div id="calendar"></div>
+  <div id="calendar">
+    <div class="cal-month"></div>
+
+  </div>
 
 
   <script>
@@ -70,48 +73,84 @@
     $(function () {
       $('.datepicker').datepicker();
     });
+
   </script>
-<div class="meal-box" id="breakfast">
-  <h3>아침</h3>
-  <p id="breakfastCalories">Total: 0</p>
-  <button onclick="openModal('breakfast')">먹은 것 추가</button>
-</div>
-
-<div class="meal-box" id="lunch">
-  <h3>점심</h3>
-  <p id="lunchCalories">Total: 0</p>
-  <button onclick="openModal('lunch')">먹은 것 추가</button>
-</div>
-
-<div class="meal-box" id="dinner">
-  <h3>저녁</h3>
-  <p id="dinnerCalories">Total: 0</p>
-  <button onclick="openModal('dinner')">먹은 것 추가</button>
-</div>
 
 
-<div class="meal-box" id="snack">
-  <h3>간식</h3>
-  <p id="dinnerCalories">Total: 0</p>
-  <button onclick="openModal('snack')">먹은 것 추가</button>
-</div>
+  <div class="diet_add">
+    <!--아침-->
+    <div class="meal-box" id="breakfast">
+      <img src="./img/breakfast.svg" alt="먹은 것 추가">
+      <h3>아침</h3>
+      <div class="menu_list"></div>
+      <p id="breakfastCalories">0 Cal</p>
+      <div class="button-container">
+        <button onclick="openModal('아침')">
+          <img src="./img/add.svg" alt="먹은 것 추가">
+        </button>
+      </div>
 
-<div id="modal" class="modal">
-  <div class="modal-content">
-    <span class="close" onclick="closeModal()">&times;</span>
-    <h2 id="meal-type"></h2>
-    <form id="meal-form">
-      <label for="food">음식:</label>
-      <input type="text" id="foodName" name="foodName" required>
-      <label for="calories">칼로리:</label>
-      <input type="number" id="calories" name="calories" required>
-      <button type="submit">추가</button>
-    </form>
+    </div>
+
+    <!--점심-->
+    <div class="meal-box" id="lunch">
+      <img src="./img/lunch.svg" alt="먹은 것 추가">
+      <h3>점심</h3>
+      <div class="menu_list"></div>
+      <p id="lunchCalories">0 Cal</p>
+      <button onclick="openModal('점심')">
+        <img src="./img/add.svg" alt="먹은 것 추가">
+      </button>
+    </div>
+
+    <!--저녁-->
+    <div class="meal-box" id="dinner">
+      <img src="./img/dinner.svg" alt="먹은 것 추가">
+      <h3>저녁</h3>
+      <div class="menu_list"></div>
+      <p id="dinnerCalories">0 Cal</p>
+      <button onclick="openModal('저녁')">
+        <img src="./img/add.svg" alt="먹은 것 추가">
+      </button>
+    </div>
+
+    <!--간식-->
+    <div class="meal-box" id="snack">
+      <img src="./img/snack.svg" alt="먹은 것 추가">
+      <h3>간식</h3>
+      <div class="menu_list"></div>
+      <p id="dinnerCalories">0 Cal</p>
+      <button onclick="openModal('간식')">
+        <img src="./img/add.svg" alt="먹은 것 추가">
+      </button>
+    </div>
   </div>
+
+  <!--모달-->
+  <div id="modal" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal()">&times;</span>
+      <h2 id="meal-type"></h2>
+      <form id="meal-form">
+        <div class="form-group">
+          <label for="food">음식:</label>
+          <input type="text" id="foodName" name="foodName" required>
+        </div>
+
+        <!-- 칼로리 입력칸 -->
+        <div class="form-group">
+          <label for="calories">칼로리:</label>
+          <input type="number" id="calories" name="calories" required>
+        </div>
+        <!--추가 버튼-->
+        <button type="submit" class="cal-button">추가</button>
+      </form>
+    </div>
+  </div>
+
 </div>
 
-
-
+  <!--하단 메뉴-->
   <nav class="menu_container">
     <ul class="bottom_menu">
       <li class="menu">

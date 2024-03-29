@@ -8,6 +8,12 @@ a {
   color: #222;
 }
 
+/* 식단 추가 섹션 */
+.diet_add {
+  max-height: 330px;
+  overflow-y: auto; /* 세로 스크롤이 필요한 경우만 스크롤바를 표시 */
+}
+
 /*페이지 타이틀 박스*/
 .page_title_box {
   position: sticky; /* 영역 안 고정*/
@@ -39,33 +45,53 @@ a {
   margin-left: 5rem;
 }
 
-#breakfast {
-  padding: 10px;
-  display: flex;
+/* 아침,점심,저녁,간식 텍스트 */
+h3 {
+  margin-top: 10px;
+  display: inline-block;
+  margin-left: 10px;
 }
 
-#lunch {
-  padding: 10px;
-  display: flex;
-}
-
-#dinner {
-  padding: 10px;
-  display: flex;
-}
-
+/* 각 식사별 박스 스타일 */
+#breakfast,
+#lunch,
+#dinner,
 #snack {
+  margin-top: 10px;
+  margin-bottom: 20px;
   padding: 10px;
   display: flex;
+}
+
+/* 칼로리 텍스트 스타일 */
+#breakfastCalories,
+#lunchCalories,
+#dinnerCalories,
+#snackCalories {
+  margin-top: 13px;
+  margin-right: 10px;
+}
+
+/* 메뉴 나타내는 box */
+.menu_list {
+  border-bottom: 1px solid black;
+  width: 146px;
+  padding: 10px;
+  margin-right: 20px;
+  margin-left: 16px;
+}
+
+.button-container {
+  display: flex;
+  justify-content: flex-end; /* 버튼을 가장 오른쪽으로 이동 */
 }
 
 button {
   border: none;
+  background-color: transparent;
 }
 
-.modal-content #meal-items {
-  border: 1px solid red;
-}
+
 /*모달*/
 .modal {
   display: none;
@@ -79,12 +105,13 @@ button {
   height: 100%;
 }
 
+/* 모달 내용 스타일 */
 .modal-content {
   background-color: #fff;
   padding: 20px;
   border-radius: 10px;
   width: 430px;
-  height: 260px;
+  height: 300px;
   text-align: center;
   position: relative;
   top: 50%;
@@ -93,6 +120,7 @@ button {
   margin-top: -50px;
 }
 
+/* 닫기 버튼 스타일 */
 .close {
   color: #aaa;
   float: right;
@@ -107,6 +135,40 @@ button {
   cursor: pointer;
 }
 
+#meal-form {
+  margin-top: 40px;
+  display: flex;
+  flex-direction: column;
+}
+
+#meal-form .form-group {
+  display: inline-block;
+  margin-bottom: 10px;
+}
+
+/* 입력 요소 스타일 */
+#meal-form label,
+#meal-form input {
+  display: inline-block;
+  margin-right: 10px; /* 필요한 만큼의 간격 조정 */
+  padding: 10px;
+}
+
+/* 추가 버튼 스타일 */
+
+.cal-button {
+  margin-top: 40px;
+  display: block;
+  padding: 1.5rem 4rem;
+  color: #fff;
+  background: #25CB7B;
+  border-radius: 0 0 8px 8px;
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 100%;
+  transform: translateX(-50%);
+}
 
 /*캘린더*/
 

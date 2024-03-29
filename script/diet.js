@@ -1,5 +1,5 @@
 // ================================
-// START YOUR APP HERE
+// 캘린더
 // ================================
 const init = {
   monList: ['1월', '2월', '3월', '4월', '5월', '6월', '7월', '8월', '9월', '10월', '11월', '12월'],
@@ -31,7 +31,8 @@ const init = {
       index++;
     }
     return index;
-  }
+  },
+  event: []
 };
 
 const $calBody = document.querySelector('.cal-body');
@@ -57,9 +58,19 @@ function loadYYMM (fullDate) {
   let lastDay = init.getLastDay(yy, mm);
   let markToday;  // for marking today date
   
+
+  // 새로운 요소 생성 및 설정
+  var newElement = document.createElement('div');
+  newElement.className = 'cal-month';
+  newElement.textContent = yy + '년 ' + init.monList[mm];
+
+  // 'calendar' 요소에 새로운 요소 추가
+  document.getElementById('calendar').appendChild(newElement);
   if (mm === init.today.getMonth() && yy === init.today.getFullYear()) {
     markToday = init.today.getDate();
   }
+
+  
 
   document.querySelector('.cal-month').textContent = yy + '년 ' + init.monList[mm]; // 수정된 부분
 
@@ -130,76 +141,49 @@ $calBody.addEventListener('click', (e) => {
   }
 });
 
+// ================================
+// 모달
+// ================================
 
-/// Function to open the modal
+//모달 열기
 function openModal(meal) {
   document.getElementById('modal').style.display = 'block';
   document.getElementById('meal-type').innerText = meal;
 }
 
-// Function to close the modal
+// 모달 닫기
 function closeModal() {
-  document.getElementById('modal').style.display = 'none';
+  document.getElementById('modal').style.display = 'none'; //모달 숨기게
 }
 
-// Form submit event handler
+// 폼 제출 이벤트 핸들러
 document.getElementById('meal-form').addEventListener('submit', function(event) {
   event.preventDefault(); // 폼 제출 막기
 
-  var mealType = document.getElementById('meal-type').innerText;
-  var foodName = document.getElementById('foodName').value;
-  var calories = parseInt(document.getElementById('calories').value);
+  var mealType = document.getElementById('meal-type').innerText; //식사 유형 가져오기
+  var foodName = document.getElementById('foodName').value; //음식 이름 가져오기
+  var calories = parseInt(document.getElementById('calories').value); //칼로리 가져오기
 
-  // 해당 식사 시간의 총 칼로리 업데이트 등 추가 작업 수행
+  // 콘솔에 입력된 음식 항목 출력
+  addMealItem(foodName, calories);
 
-  addMealItem(foodName, calories, mealType); // 추가된 항목을 텍스트로 표시하는 함수 호출
-  closeModal(); // 모달 닫기
-});
-
-// Function to add meal item to the modal content
-function addMealItem(foodName, calories, mealType) {
-  var mealItemsDiv = document.getElementById('meal-items'); // 입력된 음식을 나타낼 영역
-  var listItem = document.createElement('p'); // 새로운 <p> 요소 생성
-  listItem.textContent = foodName + ' (' + calories + ' cal)'; // 텍스트 설정
-  mealItemsDiv.appendChild(listItem); // 입력된 음식을 나타내는 요소를 영역에 추가
-}
-// 식사별 칼로리를 저장할 객체
-var mealCalories = {
-  breakfast: 0,
-  lunch: 0,
-  dinner: 0,
-  snack: 0
-};
-
-/// Form submit event handler
-document.getElementById('meal-form').addEventListener('submit', function(event) {
-  event.preventDefault(); // 폼 제출 막기
-
-  var mealType = document.getElementById('meal-type').innerText;
-  var foodName = document.getElementById('foodName').value;
-  var calories = parseInt(document.getElementById('calories').value);
-
-  // 해당 식사 시간의 총 칼로리 업데이트 등 추가 작업 수행
-
-  addMealItem(foodName, calories, mealType); // 추가된 항목을 텍스트로 표시하는 함수 호출
-  closeModal(); // 모달 닫기
-
-  // 추가된 음식을 식사별로 나타내는 함수 호출
+  // 콘솔에 해당 식사 시간의 총 칼로리 출력
   displayMealItem(foodName, calories, mealType);
+
+  closeModal(); // 모달 닫기
 });
 
-// Function to add meal item to the modal content
-function addMealItem(foodName, calories, mealType) {
-  var mealItemsDiv = document.getElementById('meal-items'); // 입력된 음식을 나타낼 영역
-  var listItem = document.createElement('p'); // 새로운 <p> 요소 생성
-  listItem.textContent = foodName + ' (' + calories + ' cal)'; // 텍스트 설정
-  mealItemsDiv.appendChild(listItem); // 입력된 음식을 나타내는 요소를 영역에 추가
+//모달 내용에 식단 항목 추가 함수
+function addMealItem(foodName, calories) {
+  var listItem = foodName + ' (' + calories + ' cal)'; // 표시할 텍스트 생성
+  alert('추가된 식단: ' + listItem); // alert 창에 출력
 }
 
-// Function to display meal item outside the modal content
+// 모달 외부에 식단 항목 표시 함수
 function displayMealItem(foodName, calories, mealType) {
-  var mealCaloriesDiv = document.getElementById(mealType.toLowerCase() + 'Calories'); // 해당 식사 시간의 칼로리를 나타낼 영역
-  var totalCalories = parseInt(mealCaloriesDiv.innerText.split(':')[1].trim()); // 기존 칼로리 가져오기
-  totalCalories += calories; // 새로운 음식의 칼로리 추가
-  mealCaloriesDiv.innerText = 'Total: ' + totalCalories; // 칼로리 업데이트
+  var totalCalories = calories; // 새로운 음식의 칼로리
+  var totalCalories = calories; // 새로운 음식의 칼로리
+  var listItem = '추가된 식단: ' + foodName + ' (' + calories + ' cal)'; // 텍스트 생성
+  var totalCaloriesText = mealType + '에 대한 총 칼로리: ' + totalCalories; // 텍스트 생성
+  alert(listItem + '\n' + totalCaloriesText); // alert 창에 출력간의 총 칼로리 출력
 }

@@ -28,12 +28,52 @@
       </div>
 
       <div class="info">
-        <span class="nickname">닉네임</span>
+        <span id="nicknameContainer" class="nickname">닉네임</span>
+        <button id="editButton">
+          <img src="./img/edit.png"></button>
         <span class="email">nickname@naver.com</span>
       </div>
+      
+      <div id="editNicknameContainer" style="display: none;">
+        <input type="text" id="newNicknameInput">
+        <button id="confirmButton">확인</button>
+    </div>
     </div>
   </section>
 
+  <script>
+    // 닉네임 수정 버튼 클릭 이벤트
+    document.getElementById('editButton').addEventListener('click', function() {
+      document.getElementById('nicknameContainer').style.display = 'none'; // 닉네임 표시 숨기기
+      document.getElementById('editNicknameContainer').style.display = 'block'; // 닉네임 수정 입력란 표시
+    });
+  
+    // 닉네임 변경 확인 버튼 클릭 이벤트
+    document.getElementById('confirmButton').addEventListener('click', function() {
+      var newNickname = document.getElementById('newNicknameInput').value; // 입력된 새 닉네임 가져오기
+      document.getElementById('nicknameContainer').textContent = newNickname; // 닉네임 표시 업데이트
+      document.getElementById('nicknameContainer').style.display = 'block'; // 닉네임 표시
+      document.getElementById('editNicknameContainer').style.display = 'none'; // 닉네임 수정 입력란 숨기기
+    });
+  
+    // 로그아웃 취소 버튼 클릭 이벤트
+    document.getElementById('cancel').addEventListener('click', function() {
+      document.getElementById('myModal').style.display = 'none'; // 로그아웃 모달 숨기기
+    });
+  
+    // 로그아웃 확인 버튼 클릭 이벤트
+    document.getElementById('confirm').addEventListener('click', function() {
+      document.getElementById('myModal').style.display = 'none'; // 로그아웃 모달 숨기기
+      document.getElementById('myModal2').style.display = 'block'; // 로그아웃 완료 모달 표시
+    });
+  
+    // 로그인 하러가기 버튼 클릭 이벤트
+    document.getElementById('login').addEventListener('click', function() {
+      // 로그인 페이지로 이동하는 코드 추가
+      window.location.href = 'login.html';
+    });
+  </script>
+  
     <div class="details_info">
       <div class="cmkg">
           <div class="input-group">
