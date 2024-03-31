@@ -1,12 +1,17 @@
 <!DOCTYPE html>
 <html lang="ko">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.7/prefixfree.min.js" integrity="sha512-p7Ey2nBhKYEi9yh0iDs+GMA0ttebOqVl3OO2oWRzRxtDoN/RedyYcHFUJZhMVi8NKRdEA7n+9NTNQX/kFIZgNw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.7/prefixfree.min.js"
+    integrity="sha512-p7Ey2nBhKYEi9yh0iDs+GMA0ttebOqVl3OO2oWRzRxtDoN/RedyYcHFUJZhMVi8NKRdEA7n+9NTNQX/kFIZgNw=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
   <!-- 폰트_프리텐다드-->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pretendard/1.3.9/static/pretendard.css" integrity="sha512-NzqTHTrO48HsIamogmIaVhTXoSgRF24Cn+ynrNYrFuKrY0AdDbmcNieiOHsQARS/r0Gax9VwV3/rVMHs3ipUlg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pretendard/1.3.9/static/pretendard.css"
+    integrity="sha512-NzqTHTrO48HsIamogmIaVhTXoSgRF24Cn+ynrNYrFuKrY0AdDbmcNieiOHsQARS/r0Gax9VwV3/rVMHs3ipUlg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
   <!-- CSS -->
   <link rel="stylesheet" href="./css/common.css">
   <link rel="stylesheet" href="./css/mypage/mypage.css">
@@ -15,11 +20,11 @@
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 
-<body style ="margin-bottom: 790px !important;">
-	<div class="page_title_box">
-		<a href="javascript:history.go(-1)" class="page_back"><img src="img/page_back.svg"></a>
-		<h2 class="page_title">마이페이지</h2>
-	</div>
+<body style="margin-bottom: 790px !important;">
+  <div class="page_title_box">
+    <a href="javascript:history.go(-1)" class="page_back"><img src="img/page_back.svg"></a>
+    <h2 class="page_title">마이페이지</h2>
+  </div>
 
   <div class="mypage_wrap">
     <section id="first_info">
@@ -28,113 +33,117 @@
       </div>
 
       <div class="info">
-        <span id="nicknameContainer" class="nickname">닉네임</span>
-        <button id="editButton">
-          <img src="./img/edit.png"></button>
-        <span class="email">nickname@naver.com</span>
+        <span id="nicknameContainer" class="nickname">닉네임
+          <button id="editButton">
+            <img src="./img/edit.png"></button>
+          <span class="email">nickname@naver.com</span>
       </div>
-      
+
       <div id="editNicknameContainer" style="display: none;">
         <input type="text" id="newNicknameInput">
         <button id="confirmButton">확인</button>
-    </div>
-    </div>
+      </div>
   </section>
+</div>
+
 
   <script>
-    // 닉네임 수정 버튼 클릭 이벤트
-    document.getElementById('editButton').addEventListener('click', function() {
+   // 닉네임 수정 버튼 클릭 이벤트
+   document.getElementById('editButton').addEventListener('click', function() {
       document.getElementById('nicknameContainer').style.display = 'none'; // 닉네임 표시 숨기기
+      document.querySelector('.info .email').style.display = 'inline'; // 이메일 표시
       document.getElementById('editNicknameContainer').style.display = 'block'; // 닉네임 수정 입력란 표시
+      document.getElementById('editButton').style.display = 'none'; // 수정 버튼 숨기기
     });
   
     // 닉네임 변경 확인 버튼 클릭 이벤트
     document.getElementById('confirmButton').addEventListener('click', function() {
       var newNickname = document.getElementById('newNicknameInput').value; // 입력된 새 닉네임 가져오기
       document.getElementById('nicknameContainer').textContent = newNickname; // 닉네임 표시 업데이트
-      document.getElementById('nicknameContainer').style.display = 'block'; // 닉네임 표시
-      document.getElementById('editNicknameContainer').style.display = 'none'; // 닉네임 수정 입력란 숨기기
+      document.getElementById('nicknameContainer').style.display = 'inline'; // 닉네임 표시
+      document.querySelector('.info .email').style.display = 'inline'; // 이메일 표시
+
     });
-  
+
     // 로그아웃 취소 버튼 클릭 이벤트
-    document.getElementById('cancel').addEventListener('click', function() {
+    document.getElementById('cancel').addEventListener('click', function () {
       document.getElementById('myModal').style.display = 'none'; // 로그아웃 모달 숨기기
     });
-  
+
     // 로그아웃 확인 버튼 클릭 이벤트
-    document.getElementById('confirm').addEventListener('click', function() {
+    document.getElementById('confirm').addEventListener('click', function () {
       document.getElementById('myModal').style.display = 'none'; // 로그아웃 모달 숨기기
       document.getElementById('myModal2').style.display = 'block'; // 로그아웃 완료 모달 표시
     });
-  
+
     // 로그인 하러가기 버튼 클릭 이벤트
-    document.getElementById('login').addEventListener('click', function() {
+    document.getElementById('login').addEventListener('click', function () {
       // 로그인 페이지로 이동하는 코드 추가
       window.location.href = 'login.html';
     });
   </script>
-  
-    <div class="details_info">
-      <div class="cmkg">
-          <div class="input-group">
-              <label for="height">키</label>
-     
-                <input type="text" id="height" name="height">
-                <span class="unit">cm</span>
-              
-          </div>
 
-          <div class="input-group">
-              <label for="weight">몸무게</label>
-              <input type="text" id="weight" name="weight">
-              <span class="unit">kg</span>
-          </div>
+  <div class="details_info">
+    <div class="cmkg">
+      <div class="input-group">
+        <label for="height">키</label>
+
+        <input type="text" id="height" name="height">
+        <span class="unit">cm</span>
+
+      </div>
+
+      <div class="input-group">
+        <label for="weight">몸무게</label>
+        <input type="text" id="weight" name="weight">
+        <span class="unit">kg</span>
       </div>
     </div>
-    
+  </div>
 
-        <div class="service">
-          <div class="content">
-            <span>개인정보 처리 방침 <br /></span>
-            <span>서비스 이용약관</span>
-          </div>
-        </div>
 
-      <div class="privacy">
-        <div class="content">
-          <span><a href="change_pwd.html">비밀번호 변경 </a><br /></span>
-          <span class="logout">로그아웃 <br /></span>
-          <span ><a href="account_leave.html">회원탈퇴</a></span>
-       </div>
+  <div class="service">
+    <div class="content">
+      <span>개인정보 처리 방침 <br /></span>
+      <span>서비스 이용약관</span>
+    </div>
+  </div>
+
+  <div class="privacy">
+    <div class="content">
+      <span><a href="change_pwd.html">비밀번호 변경 </a><br /></span>
+      <span class="logout">로그아웃 <br /></span>
+      <span><a href="account_leave.html">회원탈퇴</a></span>
+    </div>
+  </div>
+
+  <div id="myModal" class="modal">
+    <div class="modal-content">
+      <div class="header">
+        <h2>로그아웃</h2>
       </div>
 
-      <div id="myModal" class="modal">
-          <div class="modal-content">
-              <div class="header">
-                <h2>로그아웃</h2>
-              </div>
+      <p>로그아웃 하시겠습니까?</p>
+      <button id="cancel">취소</button>
+      <button id="confirm">확인</button>
+    </div>
+  </div>
 
-            <p>로그아웃 하시겠습니까?</p>
-            <button id="cancel">취소</button>
-            <button id="confirm">확인</button>
-          </div>
+  <div id="myModal2" class="modal">
+    <div class="modal-content">
+      <div class="header">
+        <h2>로그아웃 완료</h2>
       </div>
+      <p>다시 로그인하세요</p>
+      <button id="login">로그인 하러가기</button>
+    </div>
+  </div>
 
-      <div id="myModal2" class="modal">
-            <div class="modal-content">
-                <div class="header">
-                  <h2>로그아웃 완료</h2>
-                </div>
-                <p>다시 로그인하세요</p>
-                <button id="login">로그인 하러가기</button>
-            </div>
-      </div>
+  <script src="./script/mypage.js"></script>
+  </div>
 
-        <script src="./script/mypage.js"></script>
-      </div>
-      
-</div>
-  
+  </div>
+
 
   <nav class="menu_container">
     <ul class="bottom_menu">
@@ -153,8 +162,9 @@
       <li class="menu">
         <a href="./mypage.html"><img src="./img/setting hover.png"></img></a>
       </li>
-      
+
     </ul>
   </nav>
 </body>
-  </html>
+
+</html>

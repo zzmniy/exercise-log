@@ -119,7 +119,7 @@
       <img src="./img/snack.svg" alt="먹은 것 추가">
       <h3>간식</h3>
       <div class="menu_list"></div>
-      <p id="dinnerCalories">0 Cal</p>
+      <p id="snackCalories">0 Cal</p>
       <button onclick="openModal('간식')">
         <img src="./img/add.svg" alt="먹은 것 추가">
       </button>
@@ -143,10 +143,137 @@
           <input type="number" id="calories" name="calories" required>
         </div>
         <!--추가 버튼-->
-        <button type="submit" class="cal-button">추가</button>
+        <button type="submit" class="cal-button" onclick="closeModal()">추가</button>
       </form>
     </div>
   </div>
+
+  <script>
+      // 아침 식사에 대한 총 칼로리를 저장할 변수
+    var breakfastTotalCalories = 0;
+    // 점심 식사에 대한 총 칼로리를 저장할 변수
+    var lunchTotalCalories = 0;
+    // 저녁 식사에 대한 총 칼로리를 저장할 변수
+    var dinnerTotalCalories = 0;
+    // 간식에 대한 총 칼로리를 저장할 변수
+    var snackTotalCalories = 0;
+
+    // 모든 아침 메뉴와 칼로리를 관리할 배열
+    var breakfastMenu = [];
+    // 모든 점심 메뉴와 칼로리를 관리할 배열
+    var lunchMenu = [];
+    // 모든 저녁 메뉴와 칼로리를 관리할 배열
+    var dinnerMenu = [];
+    // 모든 간식 메뉴와 칼로리를 관리할 배열
+    var snackMenu = [];
+
+    // 모달 확인 버튼에 대한 이벤트 핸들러
+    document.getElementById('meal-form').addEventListener('submit', function(event) {
+      event.preventDefault(); // 폼 제출 기본 동작 막기
+      
+      // 입력한 음식과 칼로리 가져오기
+      var foodName = document.getElementById('foodName').value;
+      var calories = parseInt(document.getElementById('calories').value);
+      var mealType = document.getElementById('meal-type').textContent.toLowerCase(); // 식사 타입 가져오기
+
+      // 해당 식사 유형에 따라 데이터를 처리
+      switch (mealType) {
+        case '아침':
+          addFoodToBreakfast(foodName, calories);
+          break;
+        case '점심':
+          addFoodToLunch(foodName, calories);
+          break;
+        case '저녁':
+          addFoodToDinner(foodName, calories);
+          break;
+        case '간식':
+          addFoodToSnack(foodName, calories);
+          break;
+        default:
+          break;
+      }
+    });
+
+    // 아침 식사에 음식을 추가하는 함수
+    function addFoodToBreakfast(foodName, calories) {
+      // 새로운 음식 정보를 생성
+      var foodInfo = foodName + ' (' + calories + ' cal)';
+
+      // 총 칼로리 업데이트
+      breakfastTotalCalories += calories;
+
+      // 새로운 음식 정보를 화면에 표시
+      var menuList = document.querySelector('#breakfast .menu_list');
+      var newItem = document.createElement('div');
+      newItem.textContent = foodInfo;
+      menuList.appendChild(newItem);
+
+      // 아침 식사의 총 칼로리 업데이트
+      var breakfastCaloriesDisplay = document.getElementById('breakfastCalories');
+      breakfastCaloriesDisplay.textContent = breakfastTotalCalories + ' Cal';
+    }
+
+    // 점심 식사에 음식을 추가하는 함수
+    function addFoodToLunch(foodName, calories) {
+      // 새로운 음식 정보를 생성
+      var foodInfo = foodName + ' (' + calories + ' cal)';
+
+      // 총 칼로리 업데이트
+      lunchTotalCalories += calories;
+
+      // 새로운 음식 정보를 화면에 표시
+      var menuList = document.querySelector('#lunch .menu_list');
+      var newItem = document.createElement('div');
+      newItem.textContent = foodInfo;
+      menuList.appendChild(newItem);
+
+      // 점심 식사의 총 칼로리 업데이트
+      var lunchCaloriesDisplay = document.getElementById('lunchCalories');
+      lunchCaloriesDisplay.textContent = lunchTotalCalories + ' Cal';
+    }
+
+    // 저녁 식사에 음식을 추가하는 함수
+    function addFoodToDinner(foodName, calories) {
+      // 새로운 음식 정보를 생성
+      var foodInfo = foodName + ' (' + calories + ' cal)';
+
+      // 총 칼로리 업데이트
+      dinnerTotalCalories += calories;
+
+      // 새로운 음식 정보를 화면에 표시
+      var menuList = document.querySelector('#dinner .menu_list');
+      var newItem = document.createElement('div');
+      newItem.textContent = foodInfo;
+      menuList.appendChild(newItem);
+
+      // 저녁 식사의 총 칼로리 업데이트
+      var dinnerCaloriesDisplay = document.getElementById('dinnerCalories');
+      dinnerCaloriesDisplay.textContent = dinnerTotalCalories + ' Cal';
+    }
+
+    // 간식에 음식을 추가하는 함수
+    function addFoodToSnack(foodName, calories) {
+      // 새로운 음식 정보를 생성
+      var foodInfo = foodName + ' (' + calories + ' cal)';
+
+      // 총 칼로리 업데이트
+      snackTotalCalories += calories;
+
+      // 새로운 음식 정보를 화면에 표시
+      var menuList = document.querySelector('#snack .menu_list');
+      var newItem = document.createElement('div');
+      newItem.textContent = foodInfo;
+      menuList.appendChild(newItem);
+
+      // 간식의 총 칼로리 업데이트
+      var snackCaloriesDisplay = document.getElementById('snackCalories');
+      snackCaloriesDisplay.textContent = snackTotalCalories + ' Cal';
+    }
+
+
+  </script>
+  
 
 </div>
 
